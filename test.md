@@ -1,0 +1,2 @@
+docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu \
+   python -c "import tensorflow as tf; print('Default GPU Device: {}'.format(tf.test.gpu_device_name())) if tf.test.gpu_device_name() else print('Need install GPU')"
