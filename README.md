@@ -29,6 +29,20 @@ YOUR_HOST_IP:8888/?token=TOKEN_ID
 
 The service bind volume from `/app/notebook` in the container to current directory of host machine `./notebook`. So you can get any files via `./notebook`.
 
+## **Issues**
+
+**GPU's memory doesn't release after train model**
+
+Let's try `numba`.
+
+Ref : https://stackoverflow.com/questions/39758094/clearing-tensorflow-gpu-memory-after-model-execution
+
+```py
+from numba import cuda 
+device = cuda.get_current_device()
+device.reset()
+```
+
 ## **Contributing**
 
 ```bash
